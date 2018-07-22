@@ -1,0 +1,52 @@
+.next_words{
+    display: none !important;
+}
+@media screen and (min-width: 768px) {
+    .row{
+        display: table;
+    }
+    [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .des_title{
+        font-size: 20px;
+    }
+    .des_intro{
+        font-size: 12px;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 992px){
+    .des_title{
+        font-size: 18px;
+    }
+    .des_intro{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 768px){
+    .next_words{
+        display: none !important;
+    }
+    .row{
+        padding: 10px 0 10px 0;
+    }
+}
+@media screen and (max-width: 768px){
+
+    .pre_words{
+        display: none ;
+    }
+    .next_words{
+        display: block !important;
+    }
+    .next_words,.next_only{
+        text-align: center;
+        padding:10px 0 35px 0;
+    }
+    .row img{
+        margin: 0 auto;
+    }
+}

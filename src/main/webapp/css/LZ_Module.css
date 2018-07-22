@@ -1,0 +1,132 @@
+body{
+    display: table-cell;
+    /*height: 100%;*/
+    background-color: #fcfcfc;
+}
+
+.page{
+    margin: auto;
+    position: absolute;
+    /*position: relative;*/
+    height: 10950px;
+    /*height: auto;*/
+    top: 0px;
+    right:0;
+    left: 0;
+    width: 1280px;
+}
+
+.datail{
+    position: absolute;
+    /*position: relative;*/
+    width: 1280px;
+    left: 200px;
+    top:170px;
+    /*top: 200px;*/
+}
+
+.detail_picture{
+    height: 600px;
+    width: 400px;
+    float: left;
+    margin-right: 100px;
+}
+.detail_picture>img{
+    height: 100%;
+    width: 100%;
+}
+#pic_previous{
+    position: absolute;
+    /*position: relative;*/
+    top:246px;
+    z-index: 1;
+}
+
+#pic_next{
+    position: absolute;
+    /*position: relative;*/
+    top:246px;
+    left:364px;
+    z-index: 1;
+}
+.detail_text{
+    height: 600px;
+    width: 400px;
+    float: left;
+}
+
+.detail_text>p{
+    font:24px  微软雅黑, serif;
+    color:#808080;
+    margin: 22px 0;
+
+}
+#information{
+    line-height:37px;
+}
+.detail_text>img{
+    margin-top: 18px;
+    margin-bottom:6px;
+}
+#text_title{
+    font: 30px 微软雅黑, serif;
+    color:#333333;
+    margin-top:87px;
+    margin-bottom: 0;
+}
+
+#yuyue{
+    opacity: 0.8;
+    border-radius: 5px;
+    background-color: #1e3c65;
+    width:156px;
+    height:46px;
+    float:left;
+}
+#yuyue>p{
+    color: #fdfdfd;
+    font-size:24px;
+    font-family: 黑体, serif;
+    margin-left:32px;
+    margin-top:8px;
+}
+
+#consult{
+    border-radius: 5px;
+    width:154px;
+    height:44px;
+    border:solid 1px #1e3c65;
+    border-radius: 5px;
+    margin-left: 27px;
+    float:left;
+}
+#consult>p{
+    color: #1e3c65;
+    font-size:24px;
+    font-family: 黑体, serif;
+    margin-left:32px;
+    margin-top:8px;
+}
+
+.goods_show{
+    width:1280px;
+    /*position: absolute;*/
+    position: relative;
+    top:730px;
+}
+
+.show_text{
+    font: 36px  微软雅黑, serif;
+    margin:0;
+}
+
+.goods_show>img{
+    margin:30px 0 40px 0;
+    width: 1100px;
+}
+.top_and_back{
+    position: absolute;
+    /*position: relative;*/
+    top:1040px;
+    right:134px;
+}

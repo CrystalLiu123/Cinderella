@@ -1,0 +1,166 @@
+    .m_img{
+        height: 630px;
+        overflow: hidden;
+    }
+    .m_img>img{
+        width: 100%;
+    }
+            .ch_title{
+                font-family: "Baskerville Old Face";
+                font-size: 72px;
+                color: #9a9a9a;
+                width: 100%;
+            }
+            .ch_intro{
+                font-family: 宋体;
+                font-size: 14px;
+                color: #9a9a9a;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .ch_in{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                margin-bottom: 20px;
+                float: left;
+                clear: both;
+            }
+
+                .in_pre, .select_pre{
+                    width: 20%;
+                    height: 30px;
+                    float: left;
+                    clear: both;
+
+                    font-family: 宋体;
+                    font-size: 12px;
+                    color: #787878;
+                    text-align: right;
+                    margin-right: 20px;
+                }
+
+                .ch_input, .ch_select{
+                    -webkit-appearance:none;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                    -moz-appearance: none; -o-appearance: none; appearance: none;
+                    width: 63%;
+
+                    float: left;
+                    border: 1px solid #c7c7c7;
+                    padding-left: 10px;
+                    height: 30px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+
+                    font-family: 宋体;
+                    font-size: 12px;
+                    -webkit-color: #cacaca;
+
+                    color: #666666;
+                }
+                    .ch_select{
+                        background: url("../img/arrow.png") no-repeat scroll 98% center transparent;
+                    }
+                    .ch_input{
+                        float: left;
+                    }
+
+            .ch_in1{
+                height: 100px;
+                width: 100%;
+                margin-bottom: 20px;
+                float: left;
+                clear: both;
+            }
+            .ch_in1>textarea
+            {
+                width: 63%;
+                fong-family: 宋体;
+                font-size: 12px;
+                color: #666666;
+                border: 1px solid #c7c7c7;
+                padding-left: 10px;
+                height: 100px;
+                line-height: 30px;
+            }
+
+            .ch_in2{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                margin-bottom: 20px;
+                float: left;
+                clear: both;
+            }
+                .in_subButton, .in_retButton{
+                    border: none;
+                    background-color: #a4a4a4;
+                    font-family: 宋体;
+                    color: white;
+                    width: 60px;
+                    height: 30px;
+                }
+                .in_subButton{
+                    float: left;
+                    clear: right;
+                    margin-left: 35%;
+                }
+                .in_retButton{
+                    float: right;
+                    margin-right: 22%;
+                }
+
+
+
+@media (max-width: 1199px) {
+    .m_char{
+        background: url("../img/bgReserve.png");
+        background-size: 100%;
+        overflow: hidden;
+    }
+    .ch_title, .ch_intro, .in_pre, .select_pre, .in_subButton, .ch_select, .in_retButton{
+        color: #303030;
+    }
+    .ch_input, .ch_select, .ch_in1>textarea{
+        border: 1px solid #303030;
+    }
+    .ch_input, .ch_in1>textarea{
+        background: transparent;
+    }
+    .ch_select{
+        background: url("../img/arrow2.png") no-repeat scroll 98% center transparent;
+    }
+
+}
+@media (min-width: 374px) and (max-width: 487px){
+    .ch_title{
+        font-size: 36px;
+    }
+    .ch_in, .in_pre, .select_pre, .ch_input, .ch_select{
+
+        margin-bottom: 10px;
+}
+    .ch_in1, .ch_in1>textarea{
+        height: 100px;
+    }
+}
+@media (max-width: 321px){
+    .in_subButton{
+        margin-left: 10%;
+    }
+    .in_retButton{
+        margin-right: 22%;
+    }
+    .ch_title{
+        font-size: 26px;
+    }
+    .ch_intro{
+        font-size: 12px;
+    }
+	.in_pre, .select_pre{
+		width: 25%;
+	}
+}
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.CustomserviceMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Customservice">
+    <id column="cs_id" jdbcType="INTEGER" property="csId" />
+    <result column="cs_name" jdbcType="VARCHAR" property="csName" />
+    <result column="cs_gender" jdbcType="VARCHAR" property="csGender" />
+    <result column="cs_age" jdbcType="VARCHAR" property="csAge" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="cs_phone" jdbcType="VARCHAR" property="csPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cs_id, cs_name, cs_gender, cs_age, nickname, cs_phone
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from customservice
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from customservice
+    where cs_id = #{csId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customservice
+    where cs_id = #{csId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Customservice">
+    insert into customservice (cs_id, cs_name, cs_gender, 
+      cs_age, nickname, cs_phone
+      )
+    values (#{csId,jdbcType=INTEGER}, #{csName,jdbcType=VARCHAR}, #{csGender,jdbcType=VARCHAR}, 
+      #{csAge,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{csPhone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Customservice">
+    insert into customservice ( cs_name, cs_gender, 
+      cs_age, nickname, cs_phone
+      )
+    values ( #{csName,jdbcType=VARCHAR}, #{csGender,jdbcType=VARCHAR}, 
+      #{csAge,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{csPhone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Customservice">
+    insert into customservice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="csId != null">
+        cs_id,
+      </if>
+      <if test="csName != null">
+        cs_name,
+      </if>
+      <if test="csGender != null">
+        cs_gender,
+      </if>
+      <if test="csAge != null">
+        cs_age,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="csPhone != null">
+        cs_phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="csId != null">
+        #{csId,jdbcType=INTEGER},
+      </if>
+      <if test="csName != null">
+        #{csName,jdbcType=VARCHAR},
+      </if>
+      <if test="csGender != null">
+        #{csGender,jdbcType=VARCHAR},
+      </if>
+      <if test="csAge != null">
+        #{csAge,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="csPhone != null">
+        #{csPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Customservice">
+    update customservice
+    <set>
+      <if test="csName != null">
+        cs_name = #{csName,jdbcType=VARCHAR},
+      </if>
+      <if test="csGender != null">
+        cs_gender = #{csGender,jdbcType=VARCHAR},
+      </if>
+      <if test="csAge != null">
+        cs_age = #{csAge,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="csPhone != null">
+        cs_phone = #{csPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cs_id = #{csId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Customservice">
+    update customservice
+    set cs_name = #{csName,jdbcType=VARCHAR},
+      cs_gender = #{csGender,jdbcType=VARCHAR},
+      cs_age = #{csAge,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      cs_phone = #{csPhone,jdbcType=VARCHAR}
+    where cs_id = #{csId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.WeddingdressMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Weddingdress">
+    <id column="wd_id" jdbcType="INTEGER" property="wdId" />
+    <result column="wd_name" jdbcType="VARCHAR" property="wdName" />
+    <result column="wd_keywords" jdbcType="VARCHAR" property="wdKeywords" />
+    <result column="wd_materials" jdbcType="VARCHAR" property="wdMaterials" />
+    <result column="wd_style" jdbcType="VARCHAR" property="wdStyle" />
+    <result column="wd_type" jdbcType="VARCHAR" property="wdType" />
+    <result column="wd_designer" jdbcType="VARCHAR" property="wdDesigner" />
+    <result column="wd_detail" jdbcType="VARCHAR" property="wdDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wd_id, wd_name, wd_keywords, wd_materials, wd_style, wd_type, wd_designer, wd_detail
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from weddingdress
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from weddingdress
+    where wd_id = #{wdId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from weddingdress
+    where wd_id = #{wdId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Weddingdress">
+	insert into weddingdress ( wd_name, wd_keywords, 
+      wd_materials, wd_style, wd_type, 
+      wd_designer, wd_detail)
+    values ( #{wdName,jdbcType=VARCHAR}, #{wdKeywords,jdbcType=VARCHAR}, 
+      #{wdMaterials,jdbcType=VARCHAR}, #{wdStyle,jdbcType=VARCHAR}, #{wdType,jdbcType=VARCHAR}, 
+      #{wdDesigner,jdbcType=VARCHAR}, #{wdDetail,jdbcType=VARCHAR})
+	</insert>
+  <insert id="insert" parameterType="com.cn.model.Weddingdress">
+    insert into weddingdress (wd_id, wd_name, wd_keywords, 
+      wd_materials, wd_style, wd_type, 
+      wd_designer, wd_detail)
+    values (#{wdId,jdbcType=INTEGER}, #{wdName,jdbcType=VARCHAR}, #{wdKeywords,jdbcType=VARCHAR}, 
+      #{wdMaterials,jdbcType=VARCHAR}, #{wdStyle,jdbcType=VARCHAR}, #{wdType,jdbcType=VARCHAR}, 
+      #{wdDesigner,jdbcType=VARCHAR}, #{wdDetail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Weddingdress">
+    insert into weddingdress
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wdId != null">
+        wd_id,
+      </if>
+      <if test="wdName != null">
+        wd_name,
+      </if>
+      <if test="wdKeywords != null">
+        wd_keywords,
+      </if>
+      <if test="wdMaterials != null">
+        wd_materials,
+      </if>
+      <if test="wdStyle != null">
+        wd_style,
+      </if>
+      <if test="wdType != null">
+        wd_type,
+      </if>
+      <if test="wdDesigner != null">
+        wd_designer,
+      </if>
+      <if test="wdDetail != null">
+        wd_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wdId != null">
+        #{wdId,jdbcType=INTEGER},
+      </if>
+      <if test="wdName != null">
+        #{wdName,jdbcType=VARCHAR},
+      </if>
+      <if test="wdKeywords != null">
+        #{wdKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="wdMaterials != null">
+        #{wdMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="wdStyle != null">
+        #{wdStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="wdType != null">
+        #{wdType,jdbcType=VARCHAR},
+      </if>
+      <if test="wdDesigner != null">
+        #{wdDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="wdDetail != null">
+        #{wdDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Weddingdress">
+    update weddingdress
+    <set>
+      <if test="wdName != null">
+        wd_name = #{wdName,jdbcType=VARCHAR},
+      </if>
+      <if test="wdKeywords != null">
+        wd_keywords = #{wdKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="wdMaterials != null">
+        wd_materials = #{wdMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="wdStyle != null">
+        wd_style = #{wdStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="wdType != null">
+        wd_type = #{wdType,jdbcType=VARCHAR},
+      </if>
+      <if test="wdDesigner != null">
+        wd_designer = #{wdDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="wdDetail != null">
+        wd_detail = #{wdDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wd_id = #{wdId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Weddingdress">
+    update weddingdress
+    set wd_name = #{wdName,jdbcType=VARCHAR},
+      wd_keywords = #{wdKeywords,jdbcType=VARCHAR},
+      wd_materials = #{wdMaterials,jdbcType=VARCHAR},
+      wd_style = #{wdStyle,jdbcType=VARCHAR},
+      wd_type = #{wdType,jdbcType=VARCHAR},
+      wd_designer = #{wdDesigner,jdbcType=VARCHAR},
+      wd_detail = #{wdDetail,jdbcType=VARCHAR}
+    where wd_id = #{wdId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.DesignerMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Designer">
+    <id column="de_id" jdbcType="INTEGER" property="deId" />
+    <result column="de_name" jdbcType="VARCHAR" property="deName" />
+    <result column="de_gender" jdbcType="VARCHAR" property="deGender" />
+    <result column="de_age" jdbcType="VARCHAR" property="deAge" />
+    <result column="de_phone" jdbcType="VARCHAR" property="dePhone" />
+    <result column="de_introduce" jdbcType="VARCHAR" property="deIntroduce" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    de_id, de_name, de_gender, de_age, de_phone, de_introduce
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from designer
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from designer
+    where de_id = #{deId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from designer
+    where de_id = #{deId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Designer">
+    insert into designer (de_id, de_name, de_gender, 
+      de_age, de_phone, de_introduce
+      )
+    values (#{deId,jdbcType=INTEGER}, #{deName,jdbcType=VARCHAR}, #{deGender,jdbcType=VARCHAR}, 
+      #{deAge,jdbcType=VARCHAR}, #{dePhone,jdbcType=VARCHAR}, #{deIntroduce,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Designer">
+    insert into designer (de_name, de_gender, 
+      de_age, de_phone, de_introduce
+      )
+    values ( #{deName,jdbcType=VARCHAR}, #{deGender,jdbcType=VARCHAR}, 
+      #{deAge,jdbcType=VARCHAR}, #{dePhone,jdbcType=VARCHAR}, #{deIntroduce,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Designer">
+    insert into designer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deId != null">
+        de_id,
+      </if>
+      <if test="deName != null">
+        de_name,
+      </if>
+      <if test="deGender != null">
+        de_gender,
+      </if>
+      <if test="deAge != null">
+        de_age,
+      </if>
+      <if test="dePhone != null">
+        de_phone,
+      </if>
+      <if test="deIntroduce != null">
+        de_introduce,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deId != null">
+        #{deId,jdbcType=INTEGER},
+      </if>
+      <if test="deName != null">
+        #{deName,jdbcType=VARCHAR},
+      </if>
+      <if test="deGender != null">
+        #{deGender,jdbcType=VARCHAR},
+      </if>
+      <if test="deAge != null">
+        #{deAge,jdbcType=VARCHAR},
+      </if>
+      <if test="dePhone != null">
+        #{dePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="deIntroduce != null">
+        #{deIntroduce,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Designer">
+    update designer
+    <set>
+      <if test="deName != null">
+        de_name = #{deName,jdbcType=VARCHAR},
+      </if>
+      <if test="deGender != null">
+        de_gender = #{deGender,jdbcType=VARCHAR},
+      </if>
+      <if test="deAge != null">
+        de_age = #{deAge,jdbcType=VARCHAR},
+      </if>
+      <if test="dePhone != null">
+        de_phone = #{dePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="deIntroduce != null">
+        de_introduce = #{deIntroduce,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where de_id = #{deId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Designer">
+    update designer
+    set de_name = #{deName,jdbcType=VARCHAR},
+      de_gender = #{deGender,jdbcType=VARCHAR},
+      de_age = #{deAge,jdbcType=VARCHAR},
+      de_phone = #{dePhone,jdbcType=VARCHAR},
+      de_introduce = #{deIntroduce,jdbcType=VARCHAR}
+    where de_id = #{deId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.ChinesewdMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Chinesewd">
+    <id column="cwd_id" jdbcType="INTEGER" property="cwdId" />
+    <result column="cwd_name" jdbcType="VARCHAR" property="cwdName" />
+    <result column="cwd_keywords" jdbcType="VARCHAR" property="cwdKeywords" />
+    <result column="cwd_materials" jdbcType="VARCHAR" property="cwdMaterials" />
+    <result column="cwd_style" jdbcType="VARCHAR" property="cwdStyle" />
+    <result column="cwd_type" jdbcType="VARCHAR" property="cwdType" />
+    <result column="cwd_designer" jdbcType="VARCHAR" property="cwdDesigner" />
+    <result column="cwd_detail" jdbcType="VARCHAR" property="cwdDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cwd_id, cwd_name, cwd_keywords, cwd_materials, cwd_style, cwd_type, cwd_designer, 
+    cwd_detail
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from chinesewd
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from chinesewd
+    where cwd_id = #{cwdId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from chinesewd
+    where cwd_id = #{cwdId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Chinesewd">
+    insert into chinesewd (cwd_id, cwd_name, cwd_keywords, 
+      cwd_materials, cwd_style, cwd_type, 
+      cwd_designer, cwd_detail)
+    values (#{cwdId,jdbcType=INTEGER}, #{cwdName,jdbcType=VARCHAR}, #{cwdKeywords,jdbcType=VARCHAR}, 
+      #{cwdMaterials,jdbcType=VARCHAR}, #{cwdStyle,jdbcType=VARCHAR}, #{cwdType,jdbcType=VARCHAR}, 
+      #{cwdDesigner,jdbcType=VARCHAR}, #{cwdDetail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Chinesewd">
+    insert into chinesewd (cwd_name, cwd_keywords, 
+      cwd_materials, cwd_style, cwd_type, 
+      cwd_designer, cwd_detail)
+    values ( #{cwdName,jdbcType=VARCHAR}, #{cwdKeywords,jdbcType=VARCHAR}, 
+      #{cwdMaterials,jdbcType=VARCHAR}, #{cwdStyle,jdbcType=VARCHAR}, #{cwdType,jdbcType=VARCHAR}, 
+      #{cwdDesigner,jdbcType=VARCHAR}, #{cwdDetail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Chinesewd">
+    insert into chinesewd
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cwdId != null">
+        cwd_id,
+      </if>
+      <if test="cwdName != null">
+        cwd_name,
+      </if>
+      <if test="cwdKeywords != null">
+        cwd_keywords,
+      </if>
+      <if test="cwdMaterials != null">
+        cwd_materials,
+      </if>
+      <if test="cwdStyle != null">
+        cwd_style,
+      </if>
+      <if test="cwdType != null">
+        cwd_type,
+      </if>
+      <if test="cwdDesigner != null">
+        cwd_designer,
+      </if>
+      <if test="cwdDetail != null">
+        cwd_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cwdId != null">
+        #{cwdId,jdbcType=INTEGER},
+      </if>
+      <if test="cwdName != null">
+        #{cwdName,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdKeywords != null">
+        #{cwdKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdMaterials != null">
+        #{cwdMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdStyle != null">
+        #{cwdStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdType != null">
+        #{cwdType,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdDesigner != null">
+        #{cwdDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdDetail != null">
+        #{cwdDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Chinesewd">
+    update chinesewd
+    <set>
+      <if test="cwdName != null">
+        cwd_name = #{cwdName,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdKeywords != null">
+        cwd_keywords = #{cwdKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdMaterials != null">
+        cwd_materials = #{cwdMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdStyle != null">
+        cwd_style = #{cwdStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdType != null">
+        cwd_type = #{cwdType,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdDesigner != null">
+        cwd_designer = #{cwdDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="cwdDetail != null">
+        cwd_detail = #{cwdDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cwd_id = #{cwdId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Chinesewd">
+    update chinesewd
+    set cwd_name = #{cwdName,jdbcType=VARCHAR},
+      cwd_keywords = #{cwdKeywords,jdbcType=VARCHAR},
+      cwd_materials = #{cwdMaterials,jdbcType=VARCHAR},
+      cwd_style = #{cwdStyle,jdbcType=VARCHAR},
+      cwd_type = #{cwdType,jdbcType=VARCHAR},
+      cwd_designer = #{cwdDesigner,jdbcType=VARCHAR},
+      cwd_detail = #{cwdDetail,jdbcType=VARCHAR}
+    where cwd_id = #{cwdId,jdbcType=INTEGER}
+  </update>
+</mapper>

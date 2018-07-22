@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.ManagerMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Manager">
+    <id column="ma_id" jdbcType="INTEGER" property="maId" />
+    <result column="ma_username" jdbcType="VARCHAR" property="maUsername" />
+    <result column="ma_password" jdbcType="VARCHAR" property="maPassword" />
+    <result column="ma_lastLogin" jdbcType="TIMESTAMP" property="maLastlogin" />
+    <result column="ma_name" jdbcType="VARCHAR" property="maName" />
+    <result column="ma_gender" jdbcType="VARCHAR" property="maGender" />
+    <result column="ma_age" jdbcType="VARCHAR" property="maAge" />
+    <result column="ma_phone" jdbcType="VARCHAR" property="maPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ma_id, ma_username, ma_password, ma_lastLogin, ma_name, ma_gender, ma_age, ma_phone
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from manager
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from manager
+    where ma_id = #{maId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from manager
+    where ma_id = #{maId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Manager">
+    insert into manager (ma_id, ma_username, ma_password, 
+      ma_lastLogin, ma_name, ma_gender, 
+      ma_age, ma_phone)
+    values (#{maId,jdbcType=INTEGER}, #{maUsername,jdbcType=VARCHAR}, #{maPassword,jdbcType=VARCHAR}, 
+      #{maLastlogin,jdbcType=TIMESTAMP}, #{maName,jdbcType=VARCHAR}, #{maGender,jdbcType=VARCHAR}, 
+      #{maAge,jdbcType=VARCHAR}, #{maPhone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Manager">
+    insert into manager
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="maId != null">
+        ma_id,
+      </if>
+      <if test="maUsername != null">
+        ma_username,
+      </if>
+      <if test="maPassword != null">
+        ma_password,
+      </if>
+      <if test="maLastlogin != null">
+        ma_lastLogin,
+      </if>
+      <if test="maName != null">
+        ma_name,
+      </if>
+      <if test="maGender != null">
+        ma_gender,
+      </if>
+      <if test="maAge != null">
+        ma_age,
+      </if>
+      <if test="maPhone != null">
+        ma_phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="maId != null">
+        #{maId,jdbcType=INTEGER},
+      </if>
+      <if test="maUsername != null">
+        #{maUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="maPassword != null">
+        #{maPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="maLastlogin != null">
+        #{maLastlogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maName != null">
+        #{maName,jdbcType=VARCHAR},
+      </if>
+      <if test="maGender != null">
+        #{maGender,jdbcType=VARCHAR},
+      </if>
+      <if test="maAge != null">
+        #{maAge,jdbcType=VARCHAR},
+      </if>
+      <if test="maPhone != null">
+        #{maPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Manager">
+    update manager
+    <set>
+      <if test="maUsername != null">
+        ma_username = #{maUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="maPassword != null">
+        ma_password = #{maPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="maLastlogin != null">
+        ma_lastLogin = #{maLastlogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maName != null">
+        ma_name = #{maName,jdbcType=VARCHAR},
+      </if>
+      <if test="maGender != null">
+        ma_gender = #{maGender,jdbcType=VARCHAR},
+      </if>
+      <if test="maAge != null">
+        ma_age = #{maAge,jdbcType=VARCHAR},
+      </if>
+      <if test="maPhone != null">
+        ma_phone = #{maPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ma_id = #{maId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Manager">
+    update manager
+    set ma_username = #{maUsername,jdbcType=VARCHAR},
+      ma_password = #{maPassword,jdbcType=VARCHAR},
+      ma_lastLogin = #{maLastlogin,jdbcType=TIMESTAMP},
+      ma_name = #{maName,jdbcType=VARCHAR},
+      ma_gender = #{maGender,jdbcType=VARCHAR},
+      ma_age = #{maAge,jdbcType=VARCHAR},
+      ma_phone = #{maPhone,jdbcType=VARCHAR}
+    where ma_id = #{maId,jdbcType=INTEGER}
+  </update>
+</mapper>

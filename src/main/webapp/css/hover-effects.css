@@ -1,0 +1,81 @@
+
+/*= Reset CSS
+============= */
+
+
+.container{
+	margin-bottom: 50px;
+}
+img{
+	padding:5px;
+}
+p{
+	font-size:18px;
+	color:#3e3e3e;
+}
+
+.btn {
+	background-color:rgb(190,190,190);
+	font-color:#3e3e3e;
+	color:#3e3e3e;
+}
+.btn:hover{
+	background-color:rgba(190,190,190,0.7);
+	transition: 0.4s;}
+.text-desc{position: absolute; left: 0; top: 0;
+	background-color: #fff;
+	height: 100%;
+	opacity: 0; width: 100%;
+	padding: 20px;
+    font-size:22px;
+	font-color:#3e3e3e;
+	background-color:rgba(255,255,255,0.7);}
+
+
+.port-1{float: left; width: 100%; position: relative; overflow: hidden; text-align: center; border: 4px solid rgba(255, 255, 255, 0.8);}
+.port-1 .text-desc{opacity: 0.9; top: -100%; transition: 0.5s; color: #595959; padding: 45px 20px 20px;}
+.port-1 img{transition: 0.5s;}
+.port-1:hover img{transform: scale(1.2);}
+.port-1.effect-3 .text-desc{top: 50%; left: 50%; width: 0; height: 0; overflow: hidden; padding: 0;}
+.port-1.effect-3:hover .text-desc{width: 100%; top: 0; left: 0; height: 100%; padding: 105px 20px 20px;}
+
+/* effect-2 css */
+.port-2{float: left; width: 100%; position: relative; overflow: hidden; text-align: center; border: 4px solid rgba(255, 255, 255, 0.8); perspective: 800px;}
+.port-2 .text-desc{z-index: -1; transition: 0.6s;}
+.port-2 .image-box{transition: 0.4s;}
+.port-2:hover .image-box{transform: rotateX(80deg); transform-origin: center bottom 0; transition: 0.4s;}
+
+.port-2.effect-1:hover .text-desc{opacity: 1;}
+
+.port-2.effect-2 .text-desc{opacity: 1; top: -100%;}
+.port-2.effect-2:hover .text-desc{top: 0;}
+
+.port-2.effect-3 .text-desc{opacity: 1; top: auto; bottom: -100%;}
+.port-2.effect-3:hover .text-desc{bottom: 0;}
+/* effect-2 css end */
+
+
+
+/*= Media Screen CSS
+
+
+/*= Media Screen CSS End
+======================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

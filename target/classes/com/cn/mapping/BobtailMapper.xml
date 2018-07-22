@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.BobtailMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Bobtail">
+    <id column="bo_id" jdbcType="INTEGER" property="boId" />
+    <result column="bo_name" jdbcType="VARCHAR" property="boName" />
+    <result column="bo_keywords" jdbcType="VARCHAR" property="boKeywords" />
+    <result column="bo_materials" jdbcType="VARCHAR" property="boMaterials" />
+    <result column="bo_style" jdbcType="VARCHAR" property="boStyle" />
+    <result column="bo_type" jdbcType="VARCHAR" property="boType" />
+    <result column="bo_designer" jdbcType="VARCHAR" property="boDesigner" />
+    <result column="bo_detail" jdbcType="VARCHAR" property="boDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bo_id, bo_name, bo_keywords, bo_materials, bo_style, bo_type, bo_designer, bo_detail
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from bobtail
+	</select>
+	<insert id="insertWithoutKey" parameterType="com.cn.model.Bobtail">
+	insert into bobtail (bo_name, bo_keywords, 
+      bo_materials, bo_style, bo_type, 
+      bo_designer, bo_detail)
+    values (#{boName,jdbcType=VARCHAR}, #{boKeywords,jdbcType=VARCHAR}, 
+      #{boMaterials,jdbcType=VARCHAR}, #{boStyle,jdbcType=VARCHAR}, #{boType,jdbcType=VARCHAR}, 
+      #{boDesigner,jdbcType=VARCHAR}, #{boDetail,jdbcType=VARCHAR})
+	</insert>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bobtail
+    where bo_id = #{boId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bobtail
+    where bo_id = #{boId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Bobtail">
+    insert into bobtail (bo_id, bo_name, bo_keywords, 
+      bo_materials, bo_style, bo_type, 
+      bo_designer, bo_detail)
+    values (#{boId,jdbcType=INTEGER}, #{boName,jdbcType=VARCHAR}, #{boKeywords,jdbcType=VARCHAR}, 
+      #{boMaterials,jdbcType=VARCHAR}, #{boStyle,jdbcType=VARCHAR}, #{boType,jdbcType=VARCHAR}, 
+      #{boDesigner,jdbcType=VARCHAR}, #{boDetail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Bobtail">
+    insert into bobtail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="boId != null">
+        bo_id,
+      </if>
+      <if test="boName != null">
+        bo_name,
+      </if>
+      <if test="boKeywords != null">
+        bo_keywords,
+      </if>
+      <if test="boMaterials != null">
+        bo_materials,
+      </if>
+      <if test="boStyle != null">
+        bo_style,
+      </if>
+      <if test="boType != null">
+        bo_type,
+      </if>
+      <if test="boDesigner != null">
+        bo_designer,
+      </if>
+      <if test="boDetail != null">
+        bo_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="boId != null">
+        #{boId,jdbcType=INTEGER},
+      </if>
+      <if test="boName != null">
+        #{boName,jdbcType=VARCHAR},
+      </if>
+      <if test="boKeywords != null">
+        #{boKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="boMaterials != null">
+        #{boMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="boStyle != null">
+        #{boStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="boType != null">
+        #{boType,jdbcType=VARCHAR},
+      </if>
+      <if test="boDesigner != null">
+        #{boDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="boDetail != null">
+        #{boDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Bobtail">
+    update bobtail
+    <set>
+      <if test="boName != null">
+        bo_name = #{boName,jdbcType=VARCHAR},
+      </if>
+      <if test="boKeywords != null">
+        bo_keywords = #{boKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="boMaterials != null">
+        bo_materials = #{boMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="boStyle != null">
+        bo_style = #{boStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="boType != null">
+        bo_type = #{boType,jdbcType=VARCHAR},
+      </if>
+      <if test="boDesigner != null">
+        bo_designer = #{boDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="boDetail != null">
+        bo_detail = #{boDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bo_id = #{boId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Bobtail">
+    update bobtail
+    set bo_name = #{boName,jdbcType=VARCHAR},
+      bo_keywords = #{boKeywords,jdbcType=VARCHAR},
+      bo_materials = #{boMaterials,jdbcType=VARCHAR},
+      bo_style = #{boStyle,jdbcType=VARCHAR},
+      bo_type = #{boType,jdbcType=VARCHAR},
+      bo_designer = #{boDesigner,jdbcType=VARCHAR},
+      bo_detail = #{boDetail,jdbcType=VARCHAR}
+    where bo_id = #{boId,jdbcType=INTEGER}
+  </update>
+</mapper>

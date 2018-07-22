@@ -1,0 +1,29 @@
+table{ margin-left:auto; margin-right:auto;}
+table td{font-size:16px;padding:15px;}
+table tr td label{float:right;font-weight:500;}
+table tr td input{float:left;}
+table tr td textarea{float:left;resize: none;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+.container{
+    background-color: #fcfcfc;
+    width:100%;
+    text-align:center;
+}
+
+#wel_and_login{  height:26px;  background-color: #333333;  font-size:14px;
+	font-family:微软雅黑; color: white; padding-top: 2px; }
+#wel_and_login>span{ margin-left:40px;float:left; }
+#logout{float:right; margin-right:50px; color:white;}
+#public_logo{ width:210px; height: 60px;}
+#public_logo{ margin-top: 28px;  margin-left: auto;  margin-right: auto;}
+#public_logo>img{ width:100%;}
+.split_line{  width: 100%;  background-color: #333333;  height: 2px;  margin: 20px 0px;}
+h3{text-align:center;}
+h3 a{margin-left:30px; font-size:20px;}
+form{margin:20px auto;width:800px; }
+input{width:260px;}
+textarea{width:260px;height:100px;}
+#smt{width:150px; font-size:16px; color:#333333;}
+select{width:260px;}
+option{width:260px;}

@@ -1,0 +1,98 @@
+.container{
+    background-color: #fcfcfc;
+    width:100%;
+}
+body>.container{padding: 0px;}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1280px;
+  }
+}
+ 
+.container{background:url('../img/ly_bg2.png') no-repeat;}
+
+.back{margin: 0px 0px 5px 0px; height:40px;}
+.back a img{height: 100%;float: left;}
+.back a { text-decoration: none;}
+.back a div{ font-family: 微软雅黑; color: #333333; display: inline-block;}
+ 
+.title{background-color:#e6d9cb;text-align: center;opacity: 0.7;}
+.title span{font-family: '微软雅黑'; }
+
+.con_cen{background-color:#fcfcfc;width: 100%;font-size: 14px;}
+.cen_tle{width: 860px;height: 60px;display:table-cell;vertical-align:middle;
+    text-align: center;}
+.cen_tle span{ font-size:24px; font-family: '微软雅黑';color:#626060; display:inline-block;}
+
+.shou{width:100%;height: 50px; text-align: center;}
+.fp_phone{outline:none;width: 250px;height: 38px;border-radius: 3px; padding-left:25px; 
+    background-color:#f4f4f4;border:0px;margin: 0px;color:#b0a0a0; }
+
+/* 滑块css#b0a0a0 */
+.val{width:250px;height: 50px;margin-left: auto; margin-right:auto;}
+.drag{width: 250px;height:38px;line-height:40px;background-color:#f4f4f4;position: absolute;}
+.bg{width:38px;height: 100%;position: absolute;border-radius: 3px;}
+.text{position: absolute;width: 100%;height: 100%;text-align: center;user-select: none;color:#b0a0a0;
+    border-radius: 3px;}
+.btn{width:40px;height: 38px;position: absolute;border:1px solid #ccc;cursor: move;font-family:宋体;
+    text-align: center;background-color: #fff;user-select: none;color:#666;outline-color:#e6d9cb;
+    left:-1px;border-radius: 3px;}
+
+#mess_inv{width: 100%;height: 50px;text-align: center;}
+.validate_code{width: 150px;}
+.btn_send{width: 90px;height: 34px;border-radius: 3px; cursor: pointer;outline-color:#e6d9cb;
+    background-color:#f4f4f4;border:1px solid silver;margin-left:8px;color:#b0a0a0; }
+#mess_inv{display:none;}
+.next{width:100%;height: 50px;text-align: center;}
+.btn_next{width: 250px;height: 34px;border-radius: 3px;outline:none; cursor: pointer;outline-color:#e6d9cb;
+    background-color:#f4f4f4;border:0px solid silver;color:#b0a0a0; }
+
+
+@media (min-width: 0px) {
+    .container{background-size: 110% auto;}
+    .content{width: 80%;margin:7% auto 0px auto;}
+    .back{margin: 0px 0px 3px 0px; height:30px;}
+    .back a div{ font-size: 20px;padding-top:1px;}
+    .title{width:100%;height:48px;padding-top: 10px;font-size:20px;}
+    .con_cen{height:270px;padding-top:50px; }
+    .copy{text-align: center;margin-top:40px;margin-bottom:40px;}
+}
+@media (min-width: 550px) {
+    .container{background-size: 110% auto;}
+    .content{width: 80%;margin:7.8% auto 0px auto;}
+    .back{margin: 0px 0px 5px 0px; height:40px;}
+    .back a div{ font-size: 24px;padding-top:5px;}
+    .title{width:100%;height:60px;padding-top: 12px;font-size:24px;}
+    .con_cen{height:270px;padding-top:50px; }
+    .copy{text-align: center;margin-top:40px;margin-bottom: 40px;}
+}
+@media (min-width: 768px) {
+    .container{background-size: 100% auto;}
+    .content{width: 75%;margin:7.4% auto 0px auto;}
+    .back{margin: 0px 0px 5px 0px; height:40px;}
+    .back a div{ font-size: 24px;padding-top:5px;}
+    .title{width:100%;height:74px;padding-top: 15px;font-size:24px;}
+    .con_cen{height:270px;padding-top:50px; }
+    .copy{text-align: center;margin-top:40px;margin-bottom: 40px;}
+}
+@media (min-width: 992px) {
+    .container{background-size: 100% auto;}
+    .content{width: 70%;margin:8.6% auto 0px auto;}
+    .back{margin: 0px 0px 5px 0px; height:40px;}
+    .back a div{ font-size: 24px;padding-top:5px;}
+    .title{width:100%;height:74px;padding-top: 15px;font-size:24px;}
+    .con_cen{height:270px;padding-top:50px; }
+    .copy{text-align: center;margin-top:40px;margin-bottom: 40px;}
+    /* .drag{left:43%;  } */
+}
+@media (min-width: 1200px) {
+    .container{background-size: 100% auto;}
+    .content{width: 65%;margin:9.8% auto 0px auto;}
+    .back{margin: 0px 0px 5px 0px; height:40px;}
+    .back a div{ font-size: 24px;padding-top:5px;}
+    .title{width:100%;height:74px;padding-top: 15px;font-size:24px;}
+    .con_cen{height:300px;padding-top:60px; }
+    .copy{text-align: center;margin-top:60px;margin-bottom: 60px;}
+    /* .drag{left:41.9%;  } */
+}

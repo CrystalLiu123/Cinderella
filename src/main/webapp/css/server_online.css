@@ -1,0 +1,95 @@
+.text1{ font-family: 微软雅黑;  color: #101010; }
+.text2{ font-family: 微软雅黑;  color: #222222; }
+@media(max-width:768px){
+    .text1{  font-size: 20px; }
+    .text2{  font-size: 16px;   }
+}
+@media(min-width: 769px){
+    .text1{  font-size: 24px; }
+    .text2{  font-size: 20px; }
+}
+@media(min-width: 992px){
+    .text1{  font-size: 28px; }
+    .text2{  font-size: 24px; }
+}
+
+.center{background-image: url("../img/server_bg.png");background-size: 100% auto;background-repeat: no-repeat}
+
+.ini_top{width: 100%; height: 50px;padding-left: 3%;margin-top: 1%;}
+.ini_top{background-color: #fffefe;border-bottom: 1px solid silver;}
+.top_img{float: left;height: 50px;width: 50px;}
+.top_img>img{height: 200%;width: 200%;}
+.top_txt{padding-top: 20px;font-size: 16px;color: #080808;}
+
+.ini_left>textarea{width:80%; height:20%;resize: none;border: none;
+    outline: none;  padding-left: 4px;}
+.lf_btn{width:20%; height:20%;background-color: white; float: right;text-align: center;}
+.ini_left input{ border: 1px solid silver; outline-color: #f1f1f1;border-radius: 5px; width: 70%;
+    background-color: #f1f1f1;}
+.ini_dia{ background-color: #fafafa; width: 100%;height:80%;
+    border-bottom: 1px solid silver; overflow:auto;  }
+
+.zhanwei{width:100%;height: 30px;margin:5px 0px !important;}
+.zhanwei:first-child{margin-top: 10px !important;}
+.kefu{max-width:70%;width:auto;background: white;border-radius:15px 15px 15px 0px;
+    border:1px solid silver; margin-left:2%;padding: 3px; color: #666666;margin-top: 0px !important;
+    float: left;}
+.cust{max-width:70%; border-radius:15px 15px 0px 15px;
+    border:1px solid silver; margin-right:2%;padding: 3px; color: #666666;margin-top: 0px !important;
+    float: right;  background-color:lightyellow; }
+
+.ini_right{float:left; background-color:#fffefe;
+    border-left:1px solid silver; }
+
+.ini_right ul{margin: 0 0;font-size: 12px; padding-left: 24%;}
+.ini_right p{ width: 70%;margin-right: auto; margin-left: auto;line-height: 12px;}
+.ini_right p+p{font-weight: bold;font-size: 16px;}
+
+
+@media(min-width:0px){
+    .cen_ini{width:100%; height: 400px; margin-left: auto;margin-right: auto;
+        min-width: 200px; }
+    .ini_left{float:left;width: 100%;height:300px;}
+    .ini_right{display: none; }
+    .center{ width:100%; height:410px !important;}
+    .ini_dia div{margin-top:20px;font-size: 10px; }
+    .ser_title{ padding-top: 10px; }
+    .center{height: 440px;}
+    .ini_left input{margin-top:20%;}
+}
+@media(min-width:600px){
+    .cen_ini{width:80%; height: 400px; margin-left: auto;margin-right: auto;  }
+    .ini_left{float:left;width: 71%;height:340px;}
+    .ini_right{width:29%;height: 340px;display: block;padding-top: 5%;}
+    .center{ width:100%; height:500px !important;}
+    .fir_img{display: none;}
+    .sec_img{width:70%; margin:8% auto 8% auto;}
+    .ini_dia div{margin-top:20px;font-size: 12px; }
+    .ser_title{ padding-top: 10px; }
+    .center{height:540px;}
+    .ini_left input{margin-top:25%;}
+}
+@media(min-width:992px){
+    .cen_ini{width:70%; height: 500px; margin-left: auto;margin-right: auto;  }
+    .ini_left{float:left;width: 75%;height:440px;}
+    .ini_right{width:25%;height: 440px;display: block;padding-top: 0px !important;}
+    .center{ width:100%; height:600px !important;}
+    .fir_img{width:70%; margin:5% auto 10% auto;display: block;}
+    .sec_img{width:70%; margin:5% auto 5% auto;}
+    .ini_dia div{margin-top:20px;font-size: 14px; }
+    .ser_title{ padding-top: 20px; }
+    .center{height:600px;}
+    .ini_left input{margin-top:30%;}
+}
+@media(min-width:1200px){
+    .cen_ini{width:60%; height: 600px; margin-left: auto;margin-right: auto;  }
+    .ini_left{float:left;width: 75%;height:550px;}
+    .ini_right{width:25%; height: 550px;display: block; padding-top: 0px !important;}
+    .center{ width:100%; height:700px !important;}
+    .fir_img{width:70%; margin:10% auto 20% auto;display: block;}
+    .sec_img{width:70%; margin:5% auto 10% auto;}
+    .ini_dia div{margin-top:20px;font-size: 14px; }
+    .ser_title{ padding-top: 20px; }
+    .center{height:700px;}
+    .ini_left input{margin-top:35%;}
+}

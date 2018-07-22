@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.StoresMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Stores">
+    <id column="st_id" jdbcType="INTEGER" property="stId" />
+    <result column="st_phone" jdbcType="VARCHAR" property="stPhone" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="shopkeeper" jdbcType="VARCHAR" property="shopkeeper" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    st_id, st_phone, city, address, shopkeeper
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from stores
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from stores
+    where st_id = #{stId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from stores
+    where st_id = #{stId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Stores">
+    insert into stores (st_id, st_phone, city, 
+      address, shopkeeper)
+    values (#{stId,jdbcType=INTEGER}, #{stPhone,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{shopkeeper,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Stores">
+    insert into stores ( st_phone, city, 
+      address, shopkeeper)
+    values (#{stPhone,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{shopkeeper,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Stores">
+    insert into stores
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stId != null">
+        st_id,
+      </if>
+      <if test="stPhone != null">
+        st_phone,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="shopkeeper != null">
+        shopkeeper,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stId != null">
+        #{stId,jdbcType=INTEGER},
+      </if>
+      <if test="stPhone != null">
+        #{stPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="shopkeeper != null">
+        #{shopkeeper,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Stores">
+    update stores
+    <set>
+      <if test="stPhone != null">
+        st_phone = #{stPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="shopkeeper != null">
+        shopkeeper = #{shopkeeper,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where st_id = #{stId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Stores">
+    update stores
+    set st_phone = #{stPhone,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      shopkeeper = #{shopkeeper,jdbcType=VARCHAR}
+    where st_id = #{stId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,10 @@
+/*悬浮链接*/
+.suspension{position:fixed;z-index:55;right:0;bottom:85px;width:70px;height:240px;}
+.suspension-box{position:relative;float:right;}
+.suspension .a{display:block;width:44px;height:44px;background-color:#353535;margin-bottom:4px;cursor:pointer;outline:none;}
+.suspension .a.active,
+.suspension .a:hover{background:#F05352;}
+.suspension .a .i{float:left;width:44px;height:44px;background-image:url(../img/side_icon.png);background-repeat:no-repeat;}
+.suspension .a-top .i{background-position:-132px 0;}
+.suspension .a-top{background:#D2D3D6;display:none;}
+.suspension .a-top:hover{background:#c0c1c3;}

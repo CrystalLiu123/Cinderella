@@ -1,0 +1,373 @@
+.text1{
+    text-align: left;
+    /*padding-right: 80px;*/
+}
+.text8{
+    font-size: 30px;
+    font-family: "Adobe 宋体 Std";
+    color: #595959;
+    margin-top: 120px;
+}
+/*��ʽ����*/
+.text1{
+    font-size: 30px;
+    /*font-family: "Adobe 宋体 Std";*/
+    font-family: 微软雅黑, serif;
+    color: #595959;
+    margin-top: 15px;
+}
+/*������ʽ*/
+.text2{
+    font-size: 20px;
+    font-family: ΢���ź�;
+    color: #808080;
+}
+.text3{
+    font-size: 30px;
+    /*font-family: "Adobe 宋体 Std";*/
+    color: #595959;
+    font-family: 微软雅黑, serif;
+    margin-top: 100px;
+}
+.beijing{
+    background-color: #d5d5d5;
+}
+@media (min-width: 50px) {
+    .beijing{
+        background-color: transparent;
+    }
+    .text1{
+        text-align: center;
+        font-size: 24px;
+        font-family: 微软雅黑, serif;
+    }
+    .text2{
+        font-size: 16px;
+        /*font-family: "Adobe 宋体 Std";*/
+        font-family: 微软雅黑, serif;
+        color: #595959;
+        padding: 10px 10px 10px 0;
+        text-align: center;
+    }
+    .text3{
+        text-align: center;
+        font-size: 24px;
+        font-family: 微软雅黑, serif;
+        /*font-family: ΢���ź�;*/
+        margin-top: 112px;
+    }
+    .text4{
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    .text5{
+        font-size: 18px;
+        margin-top: 30px;
+    }
+    .text6{
+        font-size: 20px;
+        margin-top: 30px;
+    }
+    .text7{
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .text8{
+        font-family: 微软雅黑, serif;
+        font-size: 24px;
+        text-align: center;
+    }
+    .btn{
+        margin-top: 30px;
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 12px;
+        color: #fff;
+        border: 2px solid #4d92d9;
+        background-color: #4d92d9;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+}
+@media (min-width: 380px) {
+    .text4{
+        font-size: 46px;
+        margin-top: 120px;
+        /*font-family: Adobe ���� Std;*/
+        font-family: 微软雅黑, serif;
+    }
+    .text5{
+        font-size: 24px;
+        margin-top: 60px;
+        /*font-family: Adobe ���� Std;*/
+        font-family: 微软雅黑, serif;
+    }
+    .text6{
+        font-size: 36px;
+        margin-top: 100px;
+    }
+    .text7{
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    .btn{
+        margin-top: 60px;
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 32px;
+        color: #fff;
+        border: 2px solid #4d92d9;
+        background-color: #4d92d9;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+}
+@media (min-width: 768px) {
+    .beijing{
+        background-color: #d5d5d5;
+    }
+    .container{
+        /*width: auto;*/
+    }
+    p.text1,.text3, .text8{
+        text-align: left;
+        font-size: 30px;
+        font-family: 微软雅黑, serif;
+    }
+    p.text2{
+        text-align: center;
+        font-size: 24px;
+    }
+    .text4{
+        font-size: 48px;
+        margin-top: 80px;
+        font-family: "Adobe 宋体 Std";
+    }
+    .text5{
+        font-size: 26px;
+        margin-top: 60px;
+        font-family: "Adobe 宋体 Std";
+    }
+    .text6{
+        margin-bottom: 0;
+        font-size: 38px;
+        margin-top: 45px;
+    }
+    .text7{
+        font-size: 24px;
+        margin-top: 80px;
+    }
+    .btn{
+        margin-top: 120px;
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 26px;
+        color: #fff;
+        border: 2px solid #4d92d9;
+        background-color: #4d92d9;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+    .port-1{
+        width: 60%;
+        height: 60%;
+    }
+    .text-desc{
+        width: 60%;
+        height: 60%;
+    }
+}
+@media (min-width: 992px) {
+    .text1{
+        text-align: left;
+        font-size: 30px;
+        /*padding-left: 10px;*/
+    }
+    .text2{
+        font-size: 20px;
+    }
+    .text4{
+        font-size: 42px;
+    }
+    .text5{
+        font-size: 24px;
+    }
+    .text6{
+        font-size: 34px;
+    }
+    .text7{
+        font-size: 22px;
+        margin-top: 30px;
+    }
+    .split_line{margin-bottom:80px;}
+    .btn{
+        margin-top: 20px;
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 26px;
+        color: #fff;
+        border: 2px solid #4d92d9;
+        background-color: #4d92d9;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        /*width: auto;*/
+        background-color: #fcfcfc;
+    }
+    .beijing{
+        background-color: #d5d5d5;
+    }
+
+    .text4{
+        font-size: 66px;
+        margin-top: 30px;
+        font-family: "Adobe 宋体 Std";
+    }
+    .text5{
+        font-size: 28px;
+        font-family: "Adobe 宋体 Std";
+        margin-top: 80px;
+    }
+    .text6{
+        font-size: 42px;
+        font-family: "Adobe 宋体 Std";
+        margin-top: 30px;
+    }
+    .text7{
+        font-size: 24px;
+        font-family: "Adobe 宋体 Std";
+        margin-top: 35px;
+    }
+    .btn{
+        /*margin-top: 100px;*/
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 26px;
+        color: white;
+        border: 2px solid #4d92d9;
+        background-color: #4d92d9;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+}
+
+.page{
+    /*margin: 0 auto;*/
+    background-color: #fcfcfc;
+}
+.beijing a{
+    text-decoration: none;
+    color: #808080;
+}
+.beijing a:hover{
+    color: #808080;
+}
+.beijing a:visited{
+    color: #808080;
+}
+img{
+    margin: 10px auto;
+}
+.img1{
+    transition: all 300ms linear;
+}
+.img1:hover{
+    transform: scale(1.1);
+    position: relative;
+    z-index: 1;
+}
+.text-desc{
+    position: absolute;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+}
+.port-1{
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+}
+.port-1 .text-desc{
+    opacity: 0.9;
+    top: -100%;
+    transition: 0.5s;
+    color: #000;
+    padding: 10px 20px 20px;
+}
+.port-1 img{
+    transition: 0.5s;
+}
+.port-1:hover img{
+    transform: scale(1.2);
+}
+.port-1.effect-1:hover .text-desc{
+    top: 0;
+}
+
+.port-5{
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    overflow: visible;
+}
+.port-5.effect-1{
+    z-index: 9;
+}
+.port-5.effect-1 img{
+    transition: 0.5s;
+}
+.port-5.effect-1:hover img{
+    transform: scale(0.5) translateX(-100%);
+    position: relative;
+    z-index: 9;
+    border: 6px solid rgba(255, 255, 255, 0.9);
+}
+.port-5.effect-1 .text-desc{
+    transform: translateX(100%);
+    opacity: 0;
+    padding: 40px 20px 20px 90px;
+    transition: 0.5s;
+}
+.port-5.effect-1:hover .text-desc{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+
+.fenlei{
+    background-color:#fcfcfc ;
+    padding: 50px 0 0 0;
+    margin-bottom: 43px;
+    width: 160px;
+}
+.fenlei>select{
+    width: 160px;
+    height: 40px;
+    margin: 0;
+    padding-left: 10px;
+    color: #666666;
+    font-size: 22px;
+    outline: none;
+    border: solid 1px #afaeae;
+
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    background: url("../img/ChidalVeil/xialatiao.png") no-repeat scroll right center transparent;
+
+    padding-right: 14px;
+}
+img{
+    margin-top: 10px;
+    margin-bottom: 0;
+}

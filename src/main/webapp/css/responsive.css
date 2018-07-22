@@ -1,0 +1,281 @@
+/*这里讲max-width从1350px改为1280px*/
+@media screen and (max-width:1280px) {
+	.navbar-right {
+		float: right!important;
+		margin-right: 50px;
+	}
+}
+
+@media screen and (max-width:1200px) {
+	#main-menu nav.navbar.bootsnav ul.nav > li {
+		margin-left: 20px;
+		font-size: 12px;
+	}
+	#main-menu1 nav.navbar.bootsnav ul.nav > li > a {
+		padding: 20px 15px;
+	}
+}
+
+@media screen and (max-width:1100px) {
+	.brand {
+		width: 740px;
+	}
+}
+
+@media screen and (max-width:992px) {
+	.headtop1 li:last-child {
+		display: none;
+	}
+	.s-box {
+		text-align: center;
+	}
+	li.sbox {
+		width: 235px;
+	}
+	#main-menu1 .navbar-form {
+		display: block;
+	}
+	#main-menu1 input.form-control {
+		width: 100% !important;
+	}
+	.navbar-right {
+		float: right!important;
+		margin-right: 0;
+	}
+	#main-menu nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a {
+		font-family: 'Droid Serif', serif;
+		padding: 5px 0;
+		font-size: 12px;
+	}
+	#header-menu nav.navbar.bootsnav .navbar-nav {
+		margin: 20px 0;
+	}
+	#header-menu nav.navbar.bootsnav .navbar-header {
+		float: none;
+	}
+	#header-menu nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a {
+		padding: 5px 0;
+		color: #ffffff;
+		font-size: 13px;
+	}
+	nav.navbar.bootsnav .navbar-header {
+		float: left;
+	}
+	#main-menu .navbar-brand {
+		padding: 0;
+	}
+	#main-menu nav.navbar.bootsnav .navbar-header {
+		float: none;
+	}
+	#main-menu nav.navbar.bootsnav ul.nav > li > a {
+		padding: 15px 0;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.table-responsive {
+		min-height: .01%;
+		overflow-x: initial;
+	}
+	.navbar-left {
+		float: left!important;
+	}
+	.navbar-right {
+		float: right!important;
+	}
+	.j-box1 {
+		max-width: 400px;
+		margin: 0 auto;
+		margin-bottom: 57px;
+	}
+	.brand {
+		max-width: 550px;
+	}
+	.map-txt li {
+		width: 100%;
+		padding: 15px;
+	}
+	.slider-content h2{
+		font-size: 36px;
+	}
+}
+
+@media screen and (max-width:720px) {
+	.headtop1 li a {
+		padding: 9px 15px;
+		font-size: 12px;
+	}
+	.headtop1 li i {
+		font-size: 26px;
+	}
+	.headtop1 li p {
+		padding-left: 10px;
+		line-height: 18px;
+		font-size: 12px;
+	}
+	.staff-top h3 {
+		line-height: 22px;
+		font-size: 18px;
+	}
+	.brand {
+		max-width: 450px;
+	}
+	.slider-content h2{
+		font-size: 35px;
+	}
+}
+
+@media screen and (max-width:640px) {
+	.c-img:after {
+		content: '';
+		right: 28%;
+		width: 90px
+	}
+	.c-img:before {
+		content: '';
+		left: 28%;
+		width: 90px
+	}
+	.title-txt1 h5 {
+		font-size: 12px;
+	}
+	.attr-nav {
+		position: relative;
+	}
+	.refer-txt1 {
+		margin-top: 40px;
+	}
+	.refer-txt h2,
+	.refer-txt1 h2 {
+		font-size: 24px;
+	}
+	.pro-box ul>li {
+		width: 100%;
+	}
+	.brand {
+		max-width: 400px;
+	}
+	.headtop.pull-left {
+		float: none !important;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.headtop1 li,
+	.headtop1.pull-right {
+		float: none !important;
+		text-align: center;
+	}
+	.attr-nav {
+		float: none;
+		display: block;
+		text-align: center;
+	}
+	#header-top .h-right li {
+		float: none;
+		display: inline-block;
+	}
+	#header-top .navbar-header {
+		float: none;
+	}
+	#header-top nav.navbar.bootsnav {
+		margin: 20px 0;
+	}
+	.ab3-img {
+		width: 100%;
+	}
+	.ab3-txt {
+		padding-left: 0;
+		margin-bottom: 10px;
+	}
+	.slider-content h2{
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width:600px) {
+	.head-right li a {
+		padding: 15px 20px;
+	}
+	.head-left li {
+		padding-right: 10px;
+	}
+	.brand {
+		max-width: 300px;
+	}
+	.slider-content h2{
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width:580px) {
+	.c-img:after {
+		content: '';
+		width: 80px
+	}
+	.c-img:before {
+		content: '';
+		width: 80px
+	}
+	h1.title-top {
+		font-size: 24px;
+	}
+	.refer-txt1 {
+		margin-top: 20px;
+	}
+	.brand {
+		max-width: 200px;
+	}
+	.slider-content h2{
+		font-size: 28px;
+	}
+}
+
+@media screen and (max-width:480px) {
+	.c-img:after {
+		content: '';
+		right: 26%;
+		width: 70px
+	}
+	.c-img:before {
+		content: '';
+		left: 26%;
+		width: 70px
+	}
+	.refer-txt1 p {
+		max-width: 400px;
+	}
+	.head-right li {
+		margin: 5px 0;
+	}
+	#main-menu .home4 {
+		margin-top: 33px;
+	}
+	#header-top1 .navbar-left,
+	#header-top1 .navbar-right {
+		float: none!important;
+		text-align: center;
+	}
+	div#rev_slider_1078_2 {
+		margin-top: 70px !important;
+	}
+	.slider-content h2{
+		font-size: 26px;
+	}
+	.slider-item img {
+		 max-width: 100%;
+		 height: 260px;
+	 }
+
+}
+
+@media screen and (max-width:400px) {
+	.slider-content h2{
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width:360px) {
+	.slider-content h2{
+		font-size: 20px;
+	}
+}

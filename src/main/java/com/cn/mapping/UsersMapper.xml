@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Users">
+    <id column="us_id" jdbcType="INTEGER" property="usId" />
+    <result column="us_username" jdbcType="VARCHAR" property="usUsername" />
+    <result column="us_password" jdbcType="VARCHAR" property="usPassword" />
+    <result column="us_phone" jdbcType="VARCHAR" property="usPhone" />
+    <result column="us_register" jdbcType="TIMESTAMP" property="usRegister" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    us_id, us_username, us_password, us_phone, us_register
+  </sql>
+  <select id="selectAll"  resultMap="BaseResultMap"> 
+    select * from users
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where us_id = #{usId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from users
+    where us_id = #{usId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Users">
+    insert into users (us_id, us_username, us_password, 
+      us_phone, us_register)
+    values (#{usId,jdbcType=INTEGER}, #{usUsername,jdbcType=VARCHAR}, #{usPassword,jdbcType=VARCHAR}, 
+      #{usPhone,jdbcType=VARCHAR}, #{usRegister,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Users">
+    insert into users ( us_username, us_password, 
+      us_phone, us_register)
+    values ( #{usUsername,jdbcType=VARCHAR}, #{usPassword,jdbcType=VARCHAR}, 
+      #{usPhone,jdbcType=VARCHAR}, #{usRegister,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="usId != null">
+        us_id,
+      </if>
+      <if test="usUsername != null">
+        us_username,
+      </if>
+      <if test="usPassword != null">
+        us_password,
+      </if>
+      <if test="usPhone != null">
+        us_phone,
+      </if>
+      <if test="usRegister != null">
+        us_register,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="usId != null">
+        #{usId,jdbcType=INTEGER},
+      </if>
+      <if test="usUsername != null">
+        #{usUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="usPassword != null">
+        #{usPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="usPhone != null">
+        #{usPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="usRegister != null">
+        #{usRegister,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Users">
+    update users
+    <set>
+      <if test="usUsername != null">
+        us_username = #{usUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="usPassword != null">
+        us_password = #{usPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="usPhone != null">
+        us_phone = #{usPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="usRegister != null">
+        us_register = #{usRegister,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where us_id = #{usId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Users">
+    update users
+    set us_username = #{usUsername,jdbcType=VARCHAR},
+      us_password = #{usPassword,jdbcType=VARCHAR},
+      us_phone = #{usPhone,jdbcType=VARCHAR},
+      us_register = #{usRegister,jdbcType=TIMESTAMP}
+    where us_id = #{usId,jdbcType=INTEGER}
+  </update>
+</mapper>

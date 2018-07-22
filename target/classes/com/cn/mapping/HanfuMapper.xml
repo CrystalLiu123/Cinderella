@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.HanfuMapper">
+  <resultMap id="BaseResultMap" type="com.cn.model.Hanfu">
+    <id column="hf_id" jdbcType="INTEGER" property="hfId" />
+    <result column="hf_name" jdbcType="VARCHAR" property="hfName" />
+    <result column="hf_keywords" jdbcType="VARCHAR" property="hfKeywords" />
+    <result column="hf_materials" jdbcType="VARCHAR" property="hfMaterials" />
+    <result column="hf_style" jdbcType="VARCHAR" property="hfStyle" />
+    <result column="hf_type" jdbcType="VARCHAR" property="hfType" />
+    <result column="hf_designer" jdbcType="VARCHAR" property="hfDesigner" />
+    <result column="hf_detail" jdbcType="VARCHAR" property="hfDetail" />
+    <result column="hf_img" jdbcType="VARCHAR" property="hfImg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    hf_id, hf_name, hf_keywords, hf_materials, hf_style, hf_type, hf_designer, hf_detail, 
+    hf_img
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+		select * from hanfu
+	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hanfu
+    where hf_id = #{hfId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hanfu
+    where hf_id = #{hfId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.model.Hanfu">
+    insert into hanfu (hf_id, hf_name, hf_keywords, 
+      hf_materials, hf_style, hf_type, 
+      hf_designer, hf_detail, hf_img
+      )
+    values (#{hfId,jdbcType=INTEGER}, #{hfName,jdbcType=VARCHAR}, #{hfKeywords,jdbcType=VARCHAR}, 
+      #{hfMaterials,jdbcType=VARCHAR}, #{hfStyle,jdbcType=VARCHAR}, #{hfType,jdbcType=VARCHAR}, 
+      #{hfDesigner,jdbcType=VARCHAR}, #{hfDetail,jdbcType=VARCHAR}, #{hfImg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertWithoutKey" parameterType="com.cn.model.Hanfu">
+		insert into hanfu ( hf_name, hf_keywords,
+		hf_materials, hf_style, hf_type,
+		hf_designer, hf_detail)
+		values (#{hfName,jdbcType=VARCHAR},
+		#{hfKeywords,jdbcType=VARCHAR},
+		#{hfMaterials,jdbcType=VARCHAR}, #{hfStyle,jdbcType=VARCHAR}, #{hfType,jdbcType=VARCHAR},
+		#{hfDesigner,jdbcType=VARCHAR}, #{hfDetail,jdbcType=VARCHAR})
+	</insert>
+  <insert id="insertSelective" parameterType="com.cn.model.Hanfu">
+    insert into hanfu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hfId != null">
+        hf_id,
+      </if>
+      <if test="hfName != null">
+        hf_name,
+      </if>
+      <if test="hfKeywords != null">
+        hf_keywords,
+      </if>
+      <if test="hfMaterials != null">
+        hf_materials,
+      </if>
+      <if test="hfStyle != null">
+        hf_style,
+      </if>
+      <if test="hfType != null">
+        hf_type,
+      </if>
+      <if test="hfDesigner != null">
+        hf_designer,
+      </if>
+      <if test="hfDetail != null">
+        hf_detail,
+      </if>
+      <if test="hfImg != null">
+        hf_img,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hfId != null">
+        #{hfId,jdbcType=INTEGER},
+      </if>
+      <if test="hfName != null">
+        #{hfName,jdbcType=VARCHAR},
+      </if>
+      <if test="hfKeywords != null">
+        #{hfKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="hfMaterials != null">
+        #{hfMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="hfStyle != null">
+        #{hfStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="hfType != null">
+        #{hfType,jdbcType=VARCHAR},
+      </if>
+      <if test="hfDesigner != null">
+        #{hfDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="hfDetail != null">
+        #{hfDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="hfImg != null">
+        #{hfImg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.model.Hanfu">
+    update hanfu
+    <set>
+      <if test="hfName != null">
+        hf_name = #{hfName,jdbcType=VARCHAR},
+      </if>
+      <if test="hfKeywords != null">
+        hf_keywords = #{hfKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="hfMaterials != null">
+        hf_materials = #{hfMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="hfStyle != null">
+        hf_style = #{hfStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="hfType != null">
+        hf_type = #{hfType,jdbcType=VARCHAR},
+      </if>
+      <if test="hfDesigner != null">
+        hf_designer = #{hfDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="hfDetail != null">
+        hf_detail = #{hfDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="hfImg != null">
+        hf_img = #{hfImg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where hf_id = #{hfId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.model.Hanfu">
+    update hanfu
+    set hf_name = #{hfName,jdbcType=VARCHAR},
+      hf_keywords = #{hfKeywords,jdbcType=VARCHAR},
+      hf_materials = #{hfMaterials,jdbcType=VARCHAR},
+      hf_style = #{hfStyle,jdbcType=VARCHAR},
+      hf_type = #{hfType,jdbcType=VARCHAR},
+      hf_designer = #{hfDesigner,jdbcType=VARCHAR},
+      hf_detail = #{hfDetail,jdbcType=VARCHAR},
+      hf_img = #{hfImg,jdbcType=VARCHAR}
+    where hf_id = #{hfId,jdbcType=INTEGER}
+  </update>
+</mapper>
